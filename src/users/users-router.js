@@ -23,6 +23,7 @@ usersRouter.post('/', jsonBodyParser, (req, res, next) => {
         return res.status(400).json({ error: `Username already taken` });
 
       return UsersService.hashPassword(password)
+      
         .then(hashedPassword => {
           const newUser = {
             user_name,
